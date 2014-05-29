@@ -1,5 +1,5 @@
-require "codeflate/version"
+require 'codeflate/version'
+require 'codeflate/cli'
 
 module Codeflate
-  # Your code goes here...
 end
