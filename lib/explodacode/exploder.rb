@@ -7,10 +7,16 @@ module Explodacode
     NEGGING_REGEX = /^~/
 
     attr :codes, :options
-    def initialize(options, *codes)
+    def initialize(options)
       @options = options
-      @codes = codes.flatten.map(&:to_s).flatten
     end
+
+    def blow_up(*codes)
+      @codes = codes.flatten.map(&:to_s).flatten
+      results
+    end
+
+    private
 
     def source_vocabulary_id
       case options[:vocabulary].downcase.gsub(/\W/, '')
@@ -24,11 +30,11 @@ module Explodacode
     end
 
     def include_codes
-      @include_codes ||= codes.reject { |c| c =~ NEGGING_REGEX }
+      codes.reject { |c| c =~ NEGGING_REGEX }
     end
 
     def exclude_codes
-      @exclude_codes ||= codes.select { |c| c =~ NEGGING_REGEX }.map { |c| c[1..-1] }
+      codes.select { |c| c =~ NEGGING_REGEX }.map { |c| c[1..-1] }
     end
 
     def inclusion_terms
