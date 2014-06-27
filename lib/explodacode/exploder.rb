@@ -1,6 +1,6 @@
 require 'sequelizer'
 
-module Codeflate
+module Explodacode
   class Exploder
     include Sequelizer
 
