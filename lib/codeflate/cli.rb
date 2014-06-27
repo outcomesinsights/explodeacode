@@ -6,13 +6,18 @@ module Codeflate
 
     desc 'explode code1 [code2]', 'takes a compacted code, e.g. 410.x1 and returns all codes that match'
     def explode(*codes)
-      puts Exploder.new(options, codes).results.join(' ')
+      puts Exploder.new(options, translate_codes(codes)).results.join(' ')
     end
 
     desc 'explode4code code1 [code2]', 'takes a compacted code, e.g. 410.x1 and returns all codes that match, along with comma and ruby array syntax'
     def explode4code(*codes)
       puts "# codeflate explode #{options.inspect} #{codes.join(' ')}"
-      puts "%w(#{Exploder.new(options, codes).results.join(' ')})"
+      puts "%w(#{Exploder.new(options,  translate_codes(codes)).results.join(' ')})"
     end
+
+    private
+      def translate_codes(codes)
+        codes.map { |c| c.gsub('x', '?').gsub('y', '%') }
+      end
   end
 end
