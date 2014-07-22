@@ -1,15 +1,9 @@
-require 'sequelizer'
+require_relative 'ploder'
 
 module Explodacode
-  class Exploder
-    include Sequelizer
+  class Exploder < Ploder
 
     NEGGING_REGEX = /^~/
-
-    attr :codes, :options
-    def initialize(options)
-      @options = options
-    end
 
     def blow_up(*codes)
       @codes = codes.flatten.map(&:to_s).flatten
@@ -17,17 +11,6 @@ module Explodacode
     end
 
     private
-
-    def source_vocabulary_id
-      case options[:vocabulary].downcase.gsub(/\W/, '')
-      when 'icd9'
-        2
-      when 'icd10'
-        34
-      else
-        raise "Unknown vocabulary requested: #{options[:vocabulary]}"
-      end
-    end
 
     def include_codes
       codes.reject { |c| c =~ NEGGING_REGEX }
