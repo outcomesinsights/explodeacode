@@ -51,4 +51,22 @@ describe Explodacode::Exploder, '#results' do
       expect(@exploder.blow_up('I11')).to eql([])
     end
   end
+
+  describe 'with CPT' do
+    before do
+      @exploder = Explodacode::Exploder.new({vocabulary: 'CPT'})
+    end
+
+    it 'takes 9921? and yields all matches for 9921*' do
+      expect(@exploder.blow_up('9921?')).to eql(["99211", "99212", "99213", "99214", "99215", "99217", "99218", "99219"])
+    end
+
+    it 'takes 9921% and yields all matches for 9921*' do
+      expect(@exploder.blow_up('9921%')).to eql(["99211", "99212", "99213", "99214", "99215", "99217", "99218", "99219"])
+    end
+
+    it 'takes 9921%..9922% and yields all matches for 9921* and 9922*' do
+      expect(@exploder.blow_up('9921%..9922%')).to eql(["99211", "99212", "99213", "99214", "99215", "99217", "99218", "99219", "99220", "99221", "99222", "99223", "99224", "99225", "99226"])
+    end
+  end
 end
