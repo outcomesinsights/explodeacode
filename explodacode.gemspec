@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Explodacode::VERSION
   spec.authors       = ["Ryan Duryea"]
   spec.email         = ["aguynamedryan@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Blow up your codes!}
+  spec.description   = %q{Some more stuff}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -25,4 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "guard-rspec"
   spec.add_development_dependency "rb-readline"
   spec.add_dependency "thor"
+  spec.add_dependency "facets"
 end
