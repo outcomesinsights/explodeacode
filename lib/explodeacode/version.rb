@@ -1,3 +1,3 @@
-module Explodacode
+module Explodeacode
   VERSION = "0.0.1"
 end

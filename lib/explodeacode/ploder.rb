@@ -1,6 +1,6 @@
 require 'sequelizer'
 
-module Explodacode
+module Explodeacode
   class Ploder
     include Sequelizer
 

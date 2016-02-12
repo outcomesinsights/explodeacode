@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'explodacode/version'
+require 'explodeacode/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "explodacode"
-  spec.version       = Explodacode::VERSION
+  spec.name          = "explodeacode"
+  spec.version       = Explodeacode::VERSION
   spec.authors       = ["Ryan Duryea"]
   spec.email         = ["aguynamedryan@gmail.com"]
   spec.summary       = %q{Blow up your codes!}

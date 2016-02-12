@@ -1,7 +1,7 @@
 require 'facets/string/index_all'
 require_relative 'ploder'
 
-module Explodacode
+module Explodeacode
   class Exploder < Ploder
 
     NEGGING_REGEX = /^~/

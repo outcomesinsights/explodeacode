@@ -1,5 +1,5 @@
 %w[sinatra haml csv logger].each{ |gem| require gem }
-require_relative "lib/explodacode/exploder"
+require_relative "lib/explodeacode/exploder"
 
 def translate_codes(codes, options = {})
   codes = codes.map { |c| c.split(/\s*,\s*/) }.flatten.map { |c| c.gsub('x', '?').gsub('y', '%').gsub('-', '..') }
@@ -31,7 +31,7 @@ get('/') do
   if @code_str.first.empty?
     @codes = []
   else
-    @codes = Explodacode::Exploder.new(options).blow_up(translate_codes(@code_str, options))
+    @codes = Explodeacode::Exploder.new(options).blow_up(translate_codes(@code_str, options))
   end
   haml :index
 end

@@ -1,6 +1,6 @@
 require 'thor'
 require_relative 'exploder'
-module Explodacode
+module Explodeacode
   class CLI < Thor
     class_option :vocabulary, desc: 'The vocabulary for the codes e.g. ICD-9, CPT, SNOMED, etc', default: 'ICD-9'
     class_option :broad, type: :boolean, desc: 'Gather as many as possible', default: false
@@ -12,7 +12,7 @@ module Explodacode
 
     desc 'explode4code code1 [code2]', 'takes a compacted code, e.g. 410.x1 and returns all codes that match, along with comma and ruby array syntax'
     def explode4code(*codes)
-      puts "# explodacode explode #{options.inspect} #{codes.join(' ')}"
+      puts "# explodeacode explode #{options.inspect} #{codes.join(' ')}"
       puts "%w(#{Exploder.new(options).blow_up(translate_codes(codes, options)).join(' ')})"
     end
 

@@ -1,20 +1,20 @@
-# Explodacode
+# Explode-A-Code
 
-TODO: Write a gem description
+[See here for example](http://explodeacode.jigsaw.io)
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'explodacode'
+    gem 'explodeacode'
 
 And then execute:
 
-    $ bundle
+    bundle
 
 Or install it yourself as:
 
-    $ gem install explodacode
+    gem install explodeacode
 
 ## Usage
 
@@ -22,8 +22,8 @@ TODO: Write usage instructions here
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/explodacode/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+1. Fork it [http://github.com/aguynamedryan/explodeacode/fork](http://github.com/aguynamedryan/explodeacode/fork)
+1. Create your feature branch (`git checkout -b my-new-feature`)
+1. Commit your changes (`git commit -am 'Add some feature'`)
+1. Push to the branch (`git push origin my-new-feature`)
+1. Create new Pull Request

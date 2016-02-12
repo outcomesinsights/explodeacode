@@ -1,8 +1,8 @@
-require_relative '../../../lib/explodacode/exploder'
-describe Explodacode::Exploder, '#results' do
+require_relative '../../../lib/explodeacode/exploder'
+describe Explodeacode::Exploder, '#results' do
   describe 'with ICD-9s' do
     before do
-      @exploder = Explodacode::Exploder.new({vocabulary: 'ICD-9'})
+      @exploder = Explodeacode::Exploder.new({vocabulary: 'ICD-9'})
     end
 
     it 'takes finds 412 as 412 only' do
@@ -40,7 +40,7 @@ describe Explodacode::Exploder, '#results' do
 
   describe 'with ICD-10s' do
     before do
-      @exploder = Explodacode::Exploder.new({vocabulary: 'ICD-10'})
+      @exploder = Explodeacode::Exploder.new({vocabulary: 'ICD-10'})
     end
 
     it 'takes I11.% and yields all matches for I11' do
@@ -54,7 +54,7 @@ describe Explodacode::Exploder, '#results' do
 
   describe 'with CPT' do
     before do
-      @exploder = Explodacode::Exploder.new({vocabulary: 'CPT'})
+      @exploder = Explodeacode::Exploder.new({vocabulary: 'CPT'})
     end
 
     it 'takes 9921? and yields all matches for 9921*' do
