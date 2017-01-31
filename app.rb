@@ -1,6 +1,8 @@
 %w[sinatra haml csv logger].each{ |gem| require gem }
 require_relative "lib/explodeacode/exploder"
 
+set :bind, "0.0.0.0"
+
 def translate_codes(codes, options = {})
   codes = codes.map { |c| c.split(/\s*,\s*/) }.flatten.map { |c| c.gsub('x', '?').gsub('y', '%').gsub('-', '..') }
   if options['broad']
